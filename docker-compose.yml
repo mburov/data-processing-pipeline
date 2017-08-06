@@ -11,7 +11,7 @@ kafka:
     - zookeeper:zk
   environment:
     # constraint:com.docker.network.driver.overlay.bind_interface=eth0
-    KAFKA_ADVERTISED_HOST_NAME: "awstweets.eu-west-1.elasticbeanstalk.com"
+    KAFKA_ADVERTISED_HOST_NAME: "http://ec2-54-229-211-76.eu-west-1.compute.amazonaws.com"
     KAFKA_CREATE_TOPICS: "tweets"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
@@ -68,7 +68,7 @@ twitterkafkaproducer:
     ACCESS_TOKEN_SECRET: "nzcbyjTVjzvyh80qLQ2RMnSv7al3MBM42HR7Tpq2PUi0p"
     CONSUMER_KEY: "LYNucDBFgGc39vD4wfgJxM0b2"
     CONSUMER_SECRET: "bMK86bgSEquI0SEdJcVRhv4fSs8T0Aw5pk1YZimTGvHKW6ah0g"
-    KEYWORDS_LIST: ""
+    KEYWORDS_LIST: "aws"
     KAFKA_TOPIC_NAME: "tweets"
   links:
     - kafka
